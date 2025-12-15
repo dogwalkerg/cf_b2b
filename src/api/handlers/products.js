@@ -81,7 +81,7 @@ async function getAllProducts(env, corsHeaders, request) {
 async function getFeaturedProducts(env, corsHeaders) {
   try {
     const { results } = await env.DB.prepare(
-      'SELECT * FROM products WHERE is_featured = 1 AND is_active = 1 ORDER BY created_at DESC LIMIT 6'
+      'SELECT * FROM products WHERE is_featured = 1 AND is_active = 1 ORDER BY created_at DESC LIMIT 8'
     ).all();
 
     return new Response(JSON.stringify({ success: true, data: results }), {

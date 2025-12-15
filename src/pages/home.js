@@ -127,7 +127,7 @@ export async function homePage(env) {
             return;
           }
 
-          container.innerHTML = products.map(product => \`
+          container.innerHTML = products.slice(0, 8).map(product => \`
             <div class="card">
               <img src="\${product.image_url || '/images/placeholder.jpg'}" alt="\${product.name}" class="card-image">
               <div class="card-content">
